@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="icon"
+      href="https://img.icons8.com/fluent/48/000000/external-link.png"
+      type="image/x-icon"
+    />
+    <title>URL Shortener</title>
+  </head>
+  <body>
+    <div class="header-section">
+      <div class="row justify-content-center mt-2 pt-2">
+        <div class="col-sm-12 col-md-4">
+          <h3 class="text-primary">URL shortener</h3>
+          <p>
+            This tool that enables you to target, engage, and drive more
+            customers. Get Started!
+          </p>
+          <form action="/shorten" method="post">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                name="url"
+                placeholder="Enter your URL to shorten it ."
+                autocomplete="off"
+              />
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">
+              Shorten!
+            </button>
+          </form>
+          <% if(locals.shortUrls){ %>
+          <h5 class="mt-2 text-muted">
+            Shortened URL : <a href="<%= shortUrls %>"><%= shortUrls %></a>
+          </h5>
+          <%}%>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
